@@ -63,10 +63,10 @@ export default function Footer() {
               Gallery
             </h4>
             <ul className="space-y-2 text-sm text-black/70">
-              <li><Link href="/portfolio/studio" className="hover:text-black transition">Studio</Link></li>
-              <li><Link href="/portfolio/events" className="hover:text-black transition">Events</Link></li>
-              <li><Link href="/portfolio/outdoor" className="hover:text-black transition">Outdoor</Link></li>
-              <li><Link href="/portfolio/videos" className="hover:text-black transition">Videos</Link></li>
+              <li><Link href="/studio" className="hover:text-black transition">Studio</Link></li>
+              <li><Link href="/events" className="hover:text-black transition">Events</Link></li>
+              <li><Link href="/outdoor" className="hover:text-black transition">Outdoor</Link></li>
+              <li><Link href="/videos" className="hover:text-black transition">Videos</Link></li>
             </ul>
           </div>
 

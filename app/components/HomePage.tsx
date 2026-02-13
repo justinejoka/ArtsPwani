@@ -2,11 +2,8 @@
 
 import HeroSection from "./Hero";
 import MissionSection from "./Mission";
-import ProgramsSection from "./Programs";
 import TestimonialsSection from "./Testimonials";
 import AnnualReports from "./AnnualReports";
-import CallToAction from "./CallToAction";
-import Partners from "./Partners";
 
 export default function HomePage() {
   return (
