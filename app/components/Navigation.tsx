@@ -30,7 +30,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <img
-              src="/images/logo.png"
+              src="/images/logo.PNG"
               alt="Photography Logo"
               className="h-10 w-auto"
             />
