@@ -2,9 +2,41 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { Play } from "lucide-react"; // Make sure lucide-react is installed
+import { Play } from "lucide-react";
 
-const galleryData = [
+/* ---------- Types ---------- */
+
+type GalleryCardProps = {
+  type: "image" | "video";
+  src: string;
+};
+
+type GallerySection =
+  | {
+      title: string;
+      items: string[];
+      subcategories?: never;
+      videos?: never;
+    }
+  | {
+      title: string;
+      subcategories: {
+        title: string;
+        items: string[];
+      }[];
+      items?: never;
+      videos?: never;
+    }
+  | {
+      title: string;
+      videos: string[];
+      items?: never;
+      subcategories?: never;
+    };
+
+/* ---------- Data ---------- */
+
+const galleryData: GallerySection[] = [
   {
     title: "Studio",
     items: [
@@ -37,23 +69,11 @@ const galleryData = [
           "/images/event2.jpeg",
           "/images/event3.jpeg",
           "/images/event4.jpeg",
-          "/images/event5.jpeg",
-          "/images/wedding3.jpeg",
-          "/images/wedding1.jpeg",
-          "/images/wedding2.jpeg",
-          "/images/wedding3.jpeg",
-          "/images/wedding4.jpeg",
         ],
       },
       {
         title: "Weddings",
         items: [
-          "/images/event1.jpeg",
-          "/images/event2.jpeg",
-          "/images/event3.jpeg",
-          "/images/event4.jpeg",
-          "/images/event5.jpeg",
-          "/images/wedding3.jpeg",
           "/images/wedding1.jpeg",
           "/images/wedding2.jpeg",
           "/images/wedding3.jpeg",
@@ -67,12 +87,6 @@ const galleryData = [
           "/images/event2.jpeg",
           "/images/event3.jpeg",
           "/images/event4.jpeg",
-          "/images/event5.jpeg",
-          "/images/wedding3.jpeg",
-          "/images/wedding1.jpeg",
-          "/images/wedding2.jpeg",
-          "/images/wedding3.jpeg",
-          "/images/wedding4.jpeg",
         ],
       },
     ],
@@ -88,13 +102,14 @@ const galleryData = [
   },
 ];
 
+/* ---------- Main Component ---------- */
+
 export default function Gallery() {
   return (
     <section className="bg-[#FAF9F7] py-24 px-6">
       <div className="max-w-7xl mx-auto space-y-24">
         {galleryData.map((section, index) => (
           <div key={index} className="space-y-10">
-            {/* Section Title */}
             <div className="flex items-center gap-4">
               <h2 className="text-2xl md:text-3xl font-serif font-medium text-black">
                 {section.title}
@@ -102,8 +117,7 @@ export default function Gallery() {
               <div className="h-[2px] w-16 bg-[#F5C400]" />
             </div>
 
-            {/* Normal Image Sections */}
-            {section.items && (
+            {"items" in section && section.items && (
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {section.items.map((src, i) => (
                   <GalleryCard key={i} type="image" src={src} />
@@ -111,12 +125,13 @@ export default function Gallery() {
               </div>
             )}
 
-            {/* Events with Subcategories */}
-            {section.subcategories && (
+            {"subcategories" in section && section.subcategories && (
               <div className="space-y-14">
                 {section.subcategories.map((sub, i) => (
                   <div key={i} className="space-y-6">
-                    <h3 className="text-lg font-medium text-black/80">{sub.title}</h3>
+                    <h3 className="text-lg font-medium text-black/80">
+                      {sub.title}
+                    </h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                       {sub.items.map((src, j) => (
                         <GalleryCard key={j} type="image" src={src} />
@@ -127,8 +142,7 @@ export default function Gallery() {
               </div>
             )}
 
-            {/* Video Section */}
-            {section.videos && (
+            {"videos" in section && section.videos && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {section.videos.map((src, i) => (
                   <GalleryCard key={i} type="video" src={src} />
@@ -142,10 +156,10 @@ export default function Gallery() {
   );
 }
 
-/* ---------- Reusable Card Component ---------- */
+/* ---------- Reusable Card ---------- */
 
-function GalleryCard({ type, src }) {
-  const videoRef = useRef(null);
+function GalleryCard({ type, src }: GalleryCardProps) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleMouseEnter = () => {
@@ -176,6 +190,9 @@ function GalleryCard({ type, src }) {
           src={src}
           alt="Gallery"
           fill
+          sizes="(max-width: 768px) 50vw,
+                 (max-width: 1200px) 33vw,
+                 25vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       ) : (
@@ -189,7 +206,6 @@ function GalleryCard({ type, src }) {
             preload="metadata"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          {/* Play Icon */}
           {!isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <Play className="w-12 h-12 text-white/80 animate-pulse" />
@@ -198,7 +214,6 @@ function GalleryCard({ type, src }) {
         </>
       )}
 
-      {/* Hover Overlay */}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300" />
     </div>
   );
