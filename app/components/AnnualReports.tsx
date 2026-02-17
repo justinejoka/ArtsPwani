@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper";
+
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -50,7 +50,7 @@ export default function SelectedWorks() {
 
         {/* Carousel */}
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          
           navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
