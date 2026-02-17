@@ -13,7 +13,7 @@ export default function Testimonials() {
           {/* Large vertical image */}
           <div className="col-span-1 row-span-2 overflow-hidden rounded-2xl">
             <img
-              src="/images/weddings/_MG_1053.jpg"
+              src="/images/weddings/_MG_1053.JPG"
               alt="Wedding photography"
               className="w-full h-full object-cover transition duration-700 hover:scale-105"
               style={{ aspectRatio: "3 / 4" }} // keeps image proportional
