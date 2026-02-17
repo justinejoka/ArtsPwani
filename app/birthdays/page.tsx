@@ -18,7 +18,7 @@ export default function EventsPage() {
 
         {/* Page Heading */}
         <h1 className="text-4xl md:text-5xl font-serif mb-16 text-center">
-          Events <span className="text-yellow-400">: Weddings</span>
+          Events <span className="text-yellow-400">: Birthdays</span>
         </h1>
 
         {/* Gallery Grid */}
