@@ -25,7 +25,9 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 z-50 w-full">
       <div className="bg-white/70 backdrop-blur-xl border-b border-black/10">
-        <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+
+        {/* ✅ UPDATED CONTAINER SYSTEM */}
+        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 py-4 flex items-center justify-between">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -39,6 +41,7 @@ export default function Navigation() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10 text-sm tracking-wide">
 
+            {/* Home */}
             <Link
               href="/"
               className={`relative transition ${
@@ -58,7 +61,12 @@ export default function Navigation() {
             <div className="relative group">
               <span
                 className={`cursor-pointer transition ${
-                  pathname.startsWith("/portfolio")
+                  pathname.startsWith("/studio") ||
+                  pathname.startsWith("/outdoor") ||
+                  pathname.startsWith("/videos") ||
+                  pathname.startsWith("/birthdays") ||
+                  pathname.startsWith("/weddings") ||
+                  pathname.startsWith("/corporate")
                     ? "text-black"
                     : "text-black/70 group-hover:text-black"
                 }`}
@@ -66,7 +74,12 @@ export default function Navigation() {
                 Gallery
               </span>
 
-              {pathname.startsWith("/") && (
+              {(pathname.startsWith("/studio") ||
+                pathname.startsWith("/outdoor") ||
+                pathname.startsWith("/videos") ||
+                pathname.startsWith("/birthdays") ||
+                pathname.startsWith("/weddings") ||
+                pathname.startsWith("/corporate")) && (
                 <span
                   className="absolute -bottom-1 left-0 h-[2px] w-full"
                   style={{ backgroundColor: YELLOW }}
@@ -84,14 +97,14 @@ export default function Navigation() {
                   Studio
                 </Link>
 
-                {/* Events Nested - POPS LEFT */}
+                {/* Events Nested */}
                 <div className="relative group/events">
                   <span className="flex items-center justify-between px-5 py-3 text-sm text-black/80 hover:bg-black/5 cursor-pointer">
                     Events
                     <ChevronLeft size={16} />
                   </span>
 
-                  {/* LEFT SIDE POP */}
+                  {/* Left Side Pop */}
                   <div className="absolute right-full top-0 mr-2 w-52 rounded-xl bg-white shadow-xl border border-black/10 
                   opacity-0 invisible translate-x-2
                   group-hover/events:opacity-100 group-hover/events:visible group-hover/events:translate-x-0
@@ -138,6 +151,7 @@ export default function Navigation() {
               </div>
             </div>
 
+            {/* About */}
             <Link
               href="/about"
               className={`relative transition ${
@@ -155,6 +169,7 @@ export default function Navigation() {
               )}
             </Link>
 
+            {/* Contact */}
             <Link
               href="/contact"
               className={`relative transition ${
@@ -189,10 +204,7 @@ export default function Navigation() {
           <div className="flex flex-col px-6 py-6 space-y-4 text-base">
 
             <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-
-            <Link href="/studio" onClick={() => setIsMenuOpen(false)}>
-              Studio
-            </Link>
+            <Link href="/studio" onClick={() => setIsMenuOpen(false)}>Studio</Link>
 
             <div>
               <button
@@ -208,43 +220,23 @@ export default function Navigation() {
 
               {isEventsOpen && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2 text-sm">
-                  <Link
-                    href="/birthdays"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                  <Link href="/birthdays" onClick={() => setIsMenuOpen(false)}>
                     Birthday
                   </Link>
-                  <Link
-                    href="/weddings"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                  <Link href="/weddings" onClick={() => setIsMenuOpen(false)}>
                     Weddings
                   </Link>
-                  <Link
-                    href="/corporate"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
+                  <Link href="/corporate" onClick={() => setIsMenuOpen(false)}>
                     Corporate
                   </Link>
                 </div>
               )}
             </div>
 
-            <Link href="/outdoor" onClick={() => setIsMenuOpen(false)}>
-              Outdoor
-            </Link>
-
-            <Link href="/videos" onClick={() => setIsMenuOpen(false)}>
-              Videos
-            </Link>
-
-            <Link href="/about" onClick={() => setIsMenuOpen(false)}>
-              About
-            </Link>
-
-            <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-              Contact
-            </Link>
+            <Link href="/outdoor" onClick={() => setIsMenuOpen(false)}>Outdoor</Link>
+            <Link href="/videos" onClick={() => setIsMenuOpen(false)}>Videos</Link>
+            <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
 
           </div>
         </div>

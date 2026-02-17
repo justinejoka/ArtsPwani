@@ -18,7 +18,7 @@ export default function OutdoorPage() {
     "/images/outdoor/_DSC0216.jpg",
     "/images/outdoor/_DSC0227.jpg",
     "/images/outdoor/_DSC0287.jpg",
-    "/images/outdoor/_DSC0407.jpg",
+    "/images/outdoor/_DSC0407.JPG",
     "/images/outdoor/_DSC0755.jpg",
      "/images/outdoor/_DSC0756.jpg",
      "/images/outdoor/_DSC1821.jpg",
