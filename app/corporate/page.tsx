@@ -1,0 +1,54 @@
+"use client";
+
+import Image from "next/image";
+
+export default function EventsPage() {
+  const images = [
+    "/images/corporate/_DSC0733.jpg",
+    "/images/corporate/_DSC0137.jpg",
+    "/images/corporate/_DSC0147.jpg",
+    "/images/corporate/_DSC0317.jpg",
+    "/images/corporate/_DSC0372.jpg",
+    "/images/corporate/_DSC0662.jpg",
+    "/images/corporate/_DSC0022.jpg",
+  
+  ];
+
+  return (
+    <main className="bg-black min-h-screen px-6 py-24 text-white">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Page Heading */}
+        <h1 className="text-4xl md:text-5xl font-serif mb-16 text-center">
+          Events <span className="text-yellow-400">& Weddings</span>
+        </h1>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {images.map((src, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-2xl shadow-lg group"
+              style={{ aspectRatio: "4 / 5" }} // keeps all cards proportional
+            >
+              <Image
+                src={src}
+                alt={`Event Work ${index + 1}`}
+                fill
+                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw,
+                       (max-width: 1024px) 50vw,
+                       33vw"
+                priority={index === 0} // load first image faster
+              />
+
+              {/* Subtle hover overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition duration-500 rounded-2xl" />
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </main>
+  );
+}

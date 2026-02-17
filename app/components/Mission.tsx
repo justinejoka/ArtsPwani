@@ -21,7 +21,7 @@ export default function QuoteSection() {
 
         {/* Main Quote */}
         <h2 className="relative text-3xl md:text-4xl font-serif text-black leading-relaxed tracking-wide">
-          Photography is the art of freezing time —
+          Photography is the art of freezing time
           <span className="block mt-6 font-light italic text-yellow-500">
             capturing emotions, stories, and beauty
           </span>
@@ -34,7 +34,7 @@ export default function QuoteSection() {
         <div className="mt-12 flex flex-col items-center gap-3">
           <div className="w-10 h-[1px] bg-black/30"></div>
           <p className="text-xs tracking-[0.4em] text-black/60 uppercase">
-            Your Studio Philosophy
+            ArtsPwani Studio Philosophy
           </p>
         </div>
 

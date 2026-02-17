@@ -77,7 +77,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-black/70">
               <li>photo@artspwani.com</li>
-              <li>+123 456 7890</li>
+              <li>+254 797 004 354</li>
               <li>Mombasa</li>
             </ul>
           </div>

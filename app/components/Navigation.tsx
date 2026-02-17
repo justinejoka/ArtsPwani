@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronLeft, ChevronDown } from "lucide-react";
 
 const YELLOW = "#F5C400";
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -23,12 +24,11 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 z-50 w-full">
-      {/* Glass background */}
       <div className="bg-white/70 backdrop-blur-xl border-b border-black/10">
         <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2">
             <img
               src="/images/logo.PNG"
               alt="Photography Logo"
@@ -38,12 +38,12 @@ export default function Navigation() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10 text-sm tracking-wide">
+
             <Link
               href="/"
-              className={`relative transition ${isActive("/")
-                  ? "text-black"
-                  : "text-black/70 hover:text-black"
-                }`}
+              className={`relative transition ${
+                isActive("/") ? "text-black" : "text-black/70 hover:text-black"
+              }`}
             >
               Home
               {isActive("/") && (
@@ -54,50 +54,97 @@ export default function Navigation() {
               )}
             </Link>
 
-            {/* Portfolio Dropdown */}
+            {/* Gallery Dropdown */}
             <div className="relative group">
               <span
-                className={`cursor-pointer transition ${pathname.startsWith("/portfolio")
+                className={`cursor-pointer transition ${
+                  pathname.startsWith("/portfolio")
                     ? "text-black"
                     : "text-black/70 group-hover:text-black"
-                  }`}
+                }`}
               >
                 Gallery
               </span>
 
-              {/* underline */}
-              {pathname.startsWith("/portfolio") && (
+              {pathname.startsWith("/") && (
                 <span
                   className="absolute -bottom-1 left-0 h-[2px] w-full"
                   style={{ backgroundColor: YELLOW }}
                 />
               )}
 
-              {/* Dropdown */}
-              <div className="absolute left-0 top-8 w-48 rounded-xl bg-white shadow-xl border border-black/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                {[
-                  { href: "/studio", label: "Studio" },
-                  { href: "/events", label: "Events" },
-                  { href: "/outdoor", label: "Outdoor" },
-                  { href: "/videos", label: "Videos" },
-                ].map(({ href, label }) => (
-                  <Link
-                    key={href}
-                    href={href}
-                    className="block px-5 py-3 text-sm text-black/80 hover:bg-black/5 hover:text-black"
-                  >
-                    {label}
-                  </Link>
-                ))}
+              {/* Main Dropdown */}
+              <div className="absolute left-0 top-8 w-56 rounded-xl bg-white shadow-xl border border-black/10 
+              opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+
+                <Link
+                  href="/studio"
+                  className="block px-5 py-3 text-sm text-black/80 hover:bg-black/5"
+                >
+                  Studio
+                </Link>
+
+                {/* Events Nested - POPS LEFT */}
+                <div className="relative group/events">
+                  <span className="flex items-center justify-between px-5 py-3 text-sm text-black/80 hover:bg-black/5 cursor-pointer">
+                    Events
+                    <ChevronLeft size={16} />
+                  </span>
+
+                  {/* LEFT SIDE POP */}
+                  <div className="absolute right-full top-0 mr-2 w-52 rounded-xl bg-white shadow-xl border border-black/10 
+                  opacity-0 invisible translate-x-2
+                  group-hover/events:opacity-100 group-hover/events:visible group-hover/events:translate-x-0
+                  transition-all duration-200">
+
+                    <Link
+                      href="/birthdays"
+                      className="block px-5 py-3 text-sm text-black/80 hover:bg-black/5"
+                    >
+                      Birthday
+                    </Link>
+
+                    <Link
+                      href="/weddings"
+                      className="block px-5 py-3 text-sm text-black/80 hover:bg-black/5"
+                    >
+                      Weddings
+                    </Link>
+
+                    <Link
+                      href="/corporate"
+                      className="block px-5 py-3 text-sm text-black/80 hover:bg-black/5"
+                    >
+                      Corporate
+                    </Link>
+
+                  </div>
+                </div>
+
+                <Link
+                  href="/outdoor"
+                  className="block px-5 py-3 text-sm text-black/80 hover:bg-black/5"
+                >
+                  Outdoor
+                </Link>
+
+                <Link
+                  href="/videos"
+                  className="block px-5 py-3 text-sm text-black/80 hover:bg-black/5"
+                >
+                  Videos
+                </Link>
+
               </div>
             </div>
 
             <Link
               href="/about"
-              className={`relative transition ${isActive("/about")
+              className={`relative transition ${
+                isActive("/about")
                   ? "text-black"
                   : "text-black/70 hover:text-black"
-                }`}
+              }`}
             >
               About
               {isActive("/about") && (
@@ -110,10 +157,11 @@ export default function Navigation() {
 
             <Link
               href="/contact"
-              className={`relative transition ${isActive("/contact")
+              className={`relative transition ${
+                isActive("/contact")
                   ? "text-black"
                   : "text-black/70 hover:text-black"
-                }`}
+              }`}
             >
               Contact
               {isActive("/contact") && (
@@ -125,11 +173,10 @@ export default function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <button
             className="md:hidden p-2 text-black"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -139,28 +186,66 @@ export default function Navigation() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-black/10">
-          <div className="flex flex-col px-6 py-6 space-y-6 text-base tracking-wide">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/studio", label: "Studio" },
-              { href: "/events", label: "Events" },
-              { href: "/outdoor", label: "Outdoor" },
-              { href: "/videos", label: "Videos" },
-              { href: "/about", label: "About" },
-              { href: "/contact", label: "Contact" },
-            ].map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`transition ${isActive(href)
-                    ? "text-black font-medium"
-                    : "text-black/70 hover:text-black"
-                  }`}
+          <div className="flex flex-col px-6 py-6 space-y-4 text-base">
+
+            <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+
+            <Link href="/studio" onClick={() => setIsMenuOpen(false)}>
+              Studio
+            </Link>
+
+            <div>
+              <button
+                onClick={() => setIsEventsOpen(!isEventsOpen)}
+                className="flex items-center justify-between w-full"
               >
-                {label}
-              </Link>
-            ))}
+                Events
+                <ChevronDown
+                  size={18}
+                  className={`transition ${isEventsOpen ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {isEventsOpen && (
+                <div className="ml-4 mt-2 flex flex-col space-y-2 text-sm">
+                  <Link
+                    href="/birthdays"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Birthday
+                  </Link>
+                  <Link
+                    href="/weddings"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Weddings
+                  </Link>
+                  <Link
+                    href="/corporate"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Corporate
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link href="/outdoor" onClick={() => setIsMenuOpen(false)}>
+              Outdoor
+            </Link>
+
+            <Link href="/videos" onClick={() => setIsMenuOpen(false)}>
+              Videos
+            </Link>
+
+            <Link href="/about" onClick={() => setIsMenuOpen(false)}>
+              About
+            </Link>
+
+            <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+              Contact
+            </Link>
+
           </div>
         </div>
       )}
