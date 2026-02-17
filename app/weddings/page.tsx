@@ -22,7 +22,7 @@ export default function EventsPage() {
     "/images/weddings/_F_P1038.jpg",
     "/images/weddings/_F_P1044.jpg",
     "/images/weddings/_F_P1047.jpg",
-    "/images/weddings/_MG_1053.jpg",
+    "/images/weddings/_MG_1053.JPG",
     "/images/weddings/20251216_221214.jpg",
     "/images/weddings/DSC01468.jpg",
     "/images/weddings/DSC01479.jpg",

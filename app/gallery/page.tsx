@@ -13,26 +13,26 @@ type GalleryCardProps = {
 
 type GallerySection =
   | {
+    title: string;
+    items: string[];
+    subcategories?: never;
+    videos?: never;
+  }
+  | {
+    title: string;
+    subcategories: {
       title: string;
       items: string[];
-      subcategories?: never;
-      videos?: never;
-    }
+    }[];
+    items?: never;
+    videos?: never;
+  }
   | {
-      title: string;
-      subcategories: {
-        title: string;
-        items: string[];
-      }[];
-      items?: never;
-      videos?: never;
-    }
-  | {
-      title: string;
-      videos: string[];
-      items?: never;
-      subcategories?: never;
-    };
+    title: string;
+    videos: string[];
+    items?: never;
+    subcategories?: never;
+  };
 
 /* ---------- Data ---------- */
 
@@ -40,23 +40,46 @@ const galleryData: GallerySection[] = [
   {
     title: "Studio",
     items: [
-      "/images/studio1.jpeg",
-      "/images/studio2.jpeg",
-      "/images/studio3.jpeg",
-      "/images/studio4.jpeg",
-      "/images/studio5.jpeg",
-      "/images/studio.jpeg",
+      "/images/studio/studio1.jpeg",
+      "/images/studio/studio2.jpeg",
+      "/images/studio/_DSC0920-1.jpg",
+      "/images/studio/20230522165645__DSC0111.jpg",
+      "/images/studio/studio5.jpeg",
+      "/images/studio/studio3.jpeg",
+      "/images/studio/_DSC01072.jpg",
     ],
   },
   {
     title: "Outdoor",
     items: [
-      "/images/Outdor.jpeg",
-      "/images/outdoor.jpeg",
-      "/images/outdoor1.jpeg",
-      "/images/outdoor2.jpeg",
-      "/images/outdoor3.jpeg",
-      "/images/outdoor4.jpeg",
+      "/images/outdoor/Outdor.jpeg",
+      "/images/outdoor/outdoor.jpeg",
+      "/images/outdoor/outdoor1.jpeg",
+      "/images/outdoor/_DSC0061.jpg",
+      "/images/outdoor/_DSC0060.jpg",
+      "/images/outdoor/_DSC0076.jpg",
+      "/images/outdoor/_DSC0136.jpg",
+      "/images/outdoor/_DSC0179.jpg",
+      "/images/outdoor/_DSC0197.jpg",
+      "/images/outdoor/_DSC0198.jpg",
+      "/images/outdoor/_DSC0202.jpg",
+      "/images/outdoor/_DSC0216.jpg",
+      "/images/outdoor/_DSC0227.jpg",
+      "/images/outdoor/_DSC0287.jpg",
+      "/images/outdoor/_DSC0407.jpg",
+      "/images/outdoor/_DSC0755.jpg",
+      "/images/outdoor/_DSC0756.jpg",
+      "/images/outdoor/_DSC1821.jpg",
+      "/images/outdoor/_DSC1827.jpg",
+      "/images/outdoor/DSC_0093.jpg",
+      "/images/outdoor/DSC_0382.jpg",
+      "/images/outdoor/DSC_0404.jpg",
+      "/images/outdoor/DSC_0535.jpg",
+      "/images/outdoor/DSC03438.jpg",
+      "/images/outdoor/DSC03557.jpg",
+      "/images/outdoor/DSC03558.jpg",
+      "/images/outdoor/IMG_5271.jpg",
+      "/images/outdoor/IMG_5275.jpg",
     ],
   },
   {
@@ -65,28 +88,60 @@ const galleryData: GallerySection[] = [
       {
         title: "Birthdays",
         items: [
-          "/images/event1.jpeg",
-          "/images/event2.jpeg",
-          "/images/event3.jpeg",
-          "/images/event4.jpeg",
+          "/images/birthday/_DSC0076.jpg",
+          "/images/birthday/_DSC0944.jpg",
+          "/images/birthday/_DSC0984.jpg",
+          "/images/birthday/_DSC0988.jpg",
         ],
       },
       {
         title: "Weddings",
         items: [
-          "/images/wedding1.jpeg",
-          "/images/wedding2.jpeg",
-          "/images/wedding3.jpeg",
-          "/images/wedding4.jpeg",
+          "/images/weddings/_DSC0014.jpg",
+          "/images/weddings/_DSC0019.jpg",
+          "/images/weddings/_DSC0237.jpg",
+          "/images/weddings/_DSC0025.jpg",
+          "/images/weddings/_DSC0020.jpg",
+          "/images/weddings/_DSC0012.jpg",
+          "/images/weddings/_DSC0040.jpg",
+          "/images/weddings/_DSC0409.jpg",
+          "/images/weddings/_DSC0482.jpg",
+          "/images/weddings/_DSC0484.jpg",
+          "/images/weddings/_DSC0680.jpg",
+          "/images/weddings/_DSC0683.jpg",
+          "/images/weddings/_DSC0689.jpg",
+          "/images/weddings/_DSC0735.jpg",
+          "/images/weddings/_F_P1038.jpg",
+          "/images/weddings/_F_P1044.jpg",
+          "/images/weddings/_F_P1047.jpg",
+          "/images/weddings/_MG_1053.JPG",
+          "/images/weddings/20251216_221214.jpg",
+          "/images/weddings/DSC01468.jpg",
+          "/images/weddings/DSC01479.jpg",
+          "/images/weddings/DSC01484.jpg",
+          "/images/weddings/DSC03783.jpg",
+          "/images/weddings/event1.jpeg",
+          "/images/weddings/event2.jpeg",
+          "/images/weddings/event3.jpeg",
+          "/images/weddings/event4.jpeg",
+          "/images/weddings/event5.jpeg",
+          "/images/weddings/wedding3.jpeg",
+          "/images/weddings/wedding1.jpeg",
+          "/images/weddings/wedding2.jpeg",
+          "/images/weddings/wedding3.jpeg",
+          "/images/weddings/wedding4.jpeg",
         ],
       },
       {
         title: "Corporate",
         items: [
-          "/images/event1.jpeg",
-          "/images/event2.jpeg",
-          "/images/event3.jpeg",
-          "/images/event4.jpeg",
+          "/images/corporate/_DSC0733.jpg",
+          "/images/corporate/_DSC0137.jpg",
+          "/images/corporate/_DSC0147.jpg",
+          "/images/corporate/_DSC0317.jpg",
+          "/images/corporate/_DSC0372.jpg",
+          "/images/corporate/_DSC0662.jpg",
+          "/images/corporate/_DSC0022.jpg",
         ],
       },
     ],
