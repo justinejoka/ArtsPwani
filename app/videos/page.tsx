@@ -2,8 +2,8 @@
 
 const videos = [
   {
-    title: "Wedding Ceremony",
-    src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/C%26J_TRAILER.mp4",
+    title: "Yatch Rides",
+    src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Yatch_1.mp4",
   },
   {
     title: "Creek Views",
@@ -13,9 +13,10 @@ const videos = [
     title: "Love Tales",
     src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Erick%26maggy%20trailermp4.mp4",
   },
-   {
-    title: "Yatch Rides",
-    src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Yatch_1.mp4",
+
+  {
+    title: "Wedding Ceremony",
+    src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/C%26J_TRAILER.mp4",
   },
 ];
 
@@ -23,7 +24,7 @@ export default function VideosPage() {
   return (
     <section className="min-h-screen bg-black py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-white mb-12">
+        <h1 className="text-3xl font-bold text-center text-white mb-12">
           Videos
         </h1>
 
