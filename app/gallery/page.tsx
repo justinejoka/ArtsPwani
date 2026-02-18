@@ -149,10 +149,11 @@ const galleryData: GallerySection[] = [
   {
     title: "Videos",
     videos: [
-      "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Erick%26maggy%20trailermp4.mp4",
-      "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Yatch_1.mp4",
-      "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/C%26J_TRAILER.mp44",
       "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/CREEK.mp4",
+      "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Yatch_1.mp4",
+      "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Erick%26maggy%20trailermp4.mp4",
+      "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/C%26J_TRAILER.mp44",
+      
     ],
   },
 ];

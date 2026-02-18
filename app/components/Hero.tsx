@@ -86,6 +86,7 @@ export default function Hero() {
                   sm:h-[300px] md:h-[450px] lg:h-[450px]">
               <video
                 src="https://8zx5xld4et71gee1.public.blob.vercel-storage.com/CREEK.mp4"
+                poster="/images/poster.jpg"
                 autoPlay
                 muted
                 loop
