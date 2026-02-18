@@ -85,7 +85,7 @@ export default function Hero() {
             <div className="w-[90%] overflow-hidden rounded-2xl shadow-xl border border-gray-200 
                   sm:h-[300px] md:h-[450px] lg:h-[450px]">
               <video
-                src="https://8zx5xld4et71gee1.public.blob.vercel-storage.com/C%26J_TRAILER.mp4"
+                src="https://8zx5xld4et71gee1.public.blob.vercel-storage.com/CREEK.mp4"
                 autoPlay
                 muted
                 loop
