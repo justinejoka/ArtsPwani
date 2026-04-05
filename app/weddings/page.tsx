@@ -30,6 +30,10 @@ export default function EventsPage() {
     "/images/weddings/wedding2.jpeg",
     "/images/weddings/wedding3.jpeg",
     "/images/weddings/wedding4.jpeg",
+    "/images/weddings/wedding5.jpeg",
+    "/images/weddings/wedding6.jpeg",
+    "/images/weddings/wedding7.jpeg",
+    "/images/weddings/wedding8.jpeg",
   ];
 
   return (

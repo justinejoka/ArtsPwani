@@ -8,6 +8,12 @@ export default function EventsPage() {
     "/images/birthday/_DSC0944.jpg",
     "/images/birthday/_DSC0984.jpg",
     "/images/birthday/_DSC0988.jpg",
+    "/images/birthday/birthday9.jpeg",
+    "/images/birthday/birthday91.jpeg",
+    "/images/birthday/birthday92.jpeg",
+    "/images/birthday/birthday93.jpeg",
+    "/images/birthday/birthday94.jpeg",
+    
 
   
   ];
