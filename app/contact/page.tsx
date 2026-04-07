@@ -28,7 +28,7 @@ export default function ContactPage() {
           {/* Email */}
           <div className="flex items-center justify-center gap-4 text-black">
             <Mail size={20} className="text-yellow-500" />
-            <span className="text-lg tracking-wide">your@email.com</span>
+            <span className="text-lg tracking-wide"> artspwanistudios@gmail.com</span>
           </div>
 
           {/* Location */}
