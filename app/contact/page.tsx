@@ -22,7 +22,7 @@ export default function ContactPage() {
           {/* Phone */}
           <div className="flex items-center justify-center gap-4 text-black">
             <Phone size={20} className="text-yellow-500" />
-            <span className="text-lg tracking-wide">+254 700 000 000</span>
+            <span className="text-lg tracking-wide">+254 797 004 354/0796383820</span>
           </div>
 
           {/* Email */}
@@ -34,7 +34,7 @@ export default function ContactPage() {
           {/* Location */}
           <div className="flex items-center justify-center gap-4 text-black">
             <MapPin size={20} className="text-yellow-500" />
-            <span className="text-lg tracking-wide">Nairobi, Kenya</span>
+            <span className="text-lg tracking-wide">Mombasa, Kenya</span>
           </div>
 
         </div>
