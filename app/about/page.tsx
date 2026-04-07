@@ -48,7 +48,7 @@ export default function AboutPage() {
 
         <div className="relative h-[450px]">
           <Image
-            src="/images/wedding2.jpeg"
+            src="/images/Outdor.jpeg"
             alt="Photographer at work"
             fill
             className="object-cover rounded-2xl"
