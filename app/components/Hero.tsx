@@ -15,7 +15,6 @@ export default function Hero() {
 
           {/* Brand Label */}
           <div className="flex items-center gap-3 group">
-
             <div className="relative flex items-center justify-center 
                   w-11 h-11 rounded-full 
                   bg-[#F5C400]/10">
@@ -35,9 +34,7 @@ export default function Hero() {
             <span className="text-sm tracking-[0.3em] uppercase text-black/60">
               Visual Storytelling
             </span>
-
           </div>
-
 
           {/* Heading */}
           <h1 className="text-4xl md:text-6xl font-serif font-medium leading-tight text-black">
@@ -79,27 +76,23 @@ export default function Hero() {
 
         </div>
 
-        {/* RIGHT: Image */}
+        {/* RIGHT: Video */}
         <div className="relative">
           <div className="relative flex justify-center">
             <div className="w-[90%] overflow-hidden rounded-2xl shadow-xl border border-gray-200 
                   sm:h-[300px] md:h-[450px] lg:h-[450px]">
-              <video
-                src="https://8zx5xld4et71gee1.public.blob.vercel-storage.com/CREEK.mp4"
-                poster="/images/poster.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-              />
+
+              <iframe
+                src="https://www.youtube.com/embed/6ktrEy-_qK0?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=6ktrEy-_qK0"
+                className="w-full h-full object-cover pointer-events-none"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
+
             </div>
           </div>
 
-
-
-
-          {/* subtle decorative line (artistic touch) */}
+          {/* Decorative line */}
           <span className="absolute -bottom-6 -left-6 h-24 w-24 border border-black/10" />
         </div>
 

@@ -1,23 +1,10 @@
 "use client";
 
 const videos = [
-  {
-    title: "Yatch Rides",
-    src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Yatch_1.mp4",
-  },
-  {
-    title: "Creek Views",
-    src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/CREEK.mp4",
-  },
-  {
-    title: "Love Tales",
-    src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/Erick%26maggy%20trailermp4.mp4",
-  },
-
-  {
-    title: "Wedding Ceremony",
-    src: "https://8zx5xld4et71gee1.public.blob.vercel-storage.com/C%26J_TRAILER.mp4",
-  },
+  { title: "Yatch Rides", id: "6ktrEy-_qK0" },
+  { title: "Creek Views", id: "6ktrEy-_qK0" },
+  { title: "Love Tales", id: "Rvg0xJZjAmc" },
+  { title: "Wedding Ceremony", id: "ZWQ2mgnuRZQ" },
 ];
 
 export default function VideosPage() {
@@ -32,20 +19,19 @@ export default function VideosPage() {
           {videos.map((video, index) => (
             <div
               key={index}
-              className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-lg"
+              className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
             >
-              {/* Fixed Video Height */}
-              <div className="h-80 w-full overflow-hidden">
-                <video
-                  src={video.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
+              {/* Video Container */}
+              <div className="relative w-full h-80 overflow-hidden">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&loop=1&playlist=${video.id}`}
+                  className="absolute top-0 left-0 w-full h-full pointer-events-none"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                ></iframe>
               </div>
 
+              {/* Title */}
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white">
                   {video.title}
